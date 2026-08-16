@@ -5,7 +5,7 @@ type Props = {};
 
 const HomeLayout = ({}: Props) => {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-[var(--bg-color)] text-[var(--text-color)] transition-colors duration-200">
       <Navbar />
 
       <main className="flex-grow p-6">
