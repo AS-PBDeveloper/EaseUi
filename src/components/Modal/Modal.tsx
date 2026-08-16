@@ -4,7 +4,7 @@ import React from "react";
 import { cn } from "@/libs/utils";
 
 const modalVariants = cva(
-  "fixed inset-0 flex items-center justify-center z-50 transition-all duration-300",
+  "transition-all duration-300",
   {
     variants: {
       variant: {
@@ -87,7 +87,7 @@ const Modal = React.forwardRef<HTMLDivElement, ModalProps>(
             )}
 
             {description && (
-              <p className="text-gray-600 dark:text-gray-300 mb-4 text-[inherit]">
+              <p className="text-gray-600 dark:text-gray-300 mb-4">
                 {description}
               </p>
             )}

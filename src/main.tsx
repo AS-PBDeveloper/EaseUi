@@ -3,10 +3,21 @@ import "./index.css";
 import App from "./App.tsx";
 import { Provider } from "react-redux";
 import { store } from "./store/Store.tsx";
-import { setTheme } from "./features/ThemeSlice.tsx";
+import { setTheme, type ThemeMode } from "./features/ThemeSlice.tsx";
 
-const savedTheme = localStorage.getItem("theme") || "light";
-store.dispatch(setTheme(savedTheme));
+const getInitialTheme = (): ThemeMode => {
+  const savedTheme = localStorage.getItem("theme");
+
+  if (savedTheme === "light" || savedTheme === "dark") {
+    return savedTheme;
+  }
+
+  return window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light";
+};
+
+store.dispatch(setTheme(getInitialTheme()));
 
 createRoot(document.getElementById("root")!).render(
   <Provider store={store}>
