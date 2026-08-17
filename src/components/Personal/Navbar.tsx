@@ -13,6 +13,7 @@ const COMPONENTS = [
   { name: "Carousel", path: "components/carousel" },
   { name: "Tooltip", path: "components/tooltip" },
   { name: "Layout", path: "components/layout" },
+  { name: "Form", path: "components/form" },
 ];
 
 const Navbar = () => {
