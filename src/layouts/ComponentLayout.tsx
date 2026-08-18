@@ -18,16 +18,17 @@ const ComponentLayout = ({}: Props) => {
     "Carousel",
     "Tooltip",
     "Layout",
+    "Form",
   ];
 
   return (
-    <div className="flex min-h-screen bg-[var(--bg-color)] text-[var(--text-color)] transition-colors duration-200">
+    <div className="flex min-h-screen bg-(--bg-color) text-(--text-color) transition-colors duration-200">
       <aside
         className={`
           w-64 p-6 flex flex-col
           border-r border-gray-200 dark:border-gray-800
           fixed md:static top-0 left-0 h-full z-20
-          bg-white dark:bg-gray-950 md:bg-[var(--bg-color)] md:dark:bg-[var(--bg-color)]
+          bg-white dark:bg-gray-950 md:bg-(--bg-color) md:dark:bg-(--bg-color)
           transform ${sidebarOpen ? "translate-x-0" : "-translate-x-full"} 
           transition-transform duration-300 ease-in-out
           md:translate-x-0
@@ -60,7 +61,7 @@ const ComponentLayout = ({}: Props) => {
         </ul>
       </aside>
 
-      <div className="flex-1 overflow-auto h-screen p-6 md:p-10 bg-[var(--bg-color)] transition-colors duration-200">
+      <div className="flex-1 overflow-auto h-screen p-6 md:p-10 bg-(--bg-color) transition-colors duration-200">
         <button
           className="md:hidden mb-4 p-2 text-gray-700 dark:text-gray-300 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
           onClick={() => setSidebarOpen(!sidebarOpen)}
